@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+    <div class="page-header">
+        <div class='container'>
+            <% if(userLogOut && userLogOut.length >0) { %>
+              <div class='alert alert-danger' role='alert'>
+                  <%= userLogOut %>
+              </div>
+              <% } else if(userLogInSuccess && userLogInSuccess.length > 0){ %>
+                <div class='alert alert-success' role='alert'>
+                  <%= userLogInSuccess %>
+              </div>
+              <% }; %>
+
+          <h1 class='welcome-header'>Welcome to the cheet sheet website</h1>
+          <div class='col-lg-12 col-xs-12 add-package-btn'>
+                <% if(currentUser) { %>
+                    <a href='/new'> <button class='btn btn-primary btn-sm'> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> package</button> </a>    
+                <% }; %>
+          </div>
+        </div>
+    </div>
+        
+    <div class='container'>
+        <div class='row'>
+            <% foundPackage.forEach(function(data){ %>
+                <div class='col-lg-4 col-xs-12 package-container'>
+                <a href='/package/<%= data._id %>'> <%= data.title %> </a>
+                <p> <%= data.shortDescription.substr(0,50); %> </p>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+    
+
+<% include ../partials/footer %>

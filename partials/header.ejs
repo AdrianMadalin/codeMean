@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CodeMEaN</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+            </div>
+
+          <div class="nav navbar-nav navbar-right">
+            <% if(!currentUser){  %>
+              <a href="/login" class="btn btn-success navbar-btn">Log in</a>
+              <a href="/register" class="btn btn-primary navbar-btn">Register</a>
+            <% } else {  %>
+              <a href="/logout" class="btn btn-danger navbar-btn"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log out <strong> <%= currentUser.username %>  </strong></a>
+            <% };  %>
+          </div>
+         </div><!-- /.container-fluid -->
+        </nav>

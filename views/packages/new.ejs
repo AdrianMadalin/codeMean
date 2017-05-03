@@ -1,0 +1,27 @@
+<% include ../../partials/header %>
+    <div class='container'>
+        <h3 class='align'>Add a new package</h3>
+        <div class='loginContainer'>
+            <form class='form' method='POST' action='/new'>
+                <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Title</span>
+                      <input type="text" class="form-control" name='title' placeholder="title" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">....</span>
+                      <input type="textarea" name='description' class="form-control" placeholder="short description" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-group">
+                       <input type="submit" class="btn btn-primary" aria-describedby="basic-addon1">   
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<% include ../../partials/footer %>
