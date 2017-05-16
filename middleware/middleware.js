@@ -13,16 +13,6 @@ middleware.isLoggedIn = function(req, res, next){
     };
 };
 
-var storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-            cb(null, 'public/img/')
-        },
-    filename: function(req, file, cb) {
-            cb(null, file.originalname);
-        }
-});
- 
-var upload = multer({ storage: storage }).single('image');
 
 // router.post('/test', function (req, res) {
 //   upload(req, res, function (err) {
@@ -39,6 +29,18 @@ var upload = multer({ storage: storage }).single('image');
 
 middleware.addPackage = function(req, res, next){
     
+    var storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+            cb(null, 'public/img/')
+        },
+    filename: function(req, file, cb) {
+            cb(null, file.originalname);
+        }
+});
+ 
+var upload = multer({ storage: storage }).single('image');
+    
+    
     // getting the data from the form
     var newPackage = { 
         title : req.body.title,
@@ -46,8 +48,10 @@ middleware.addPackage = function(req, res, next){
         author :{
                     id : req.user._id,
                     username : req.user.username
-        }
+        },
     };
+    
+    
     
     Package.create(newPackage, function(err, newPackage){
         if(err){

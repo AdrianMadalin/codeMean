@@ -2,7 +2,7 @@
     <div class='container'>
         <h3 class='align'>Add a new package</h3>
         <div class='loginContainer'>
-            <form class='form' method='POST' action='/new'>
+            <form class='form' method='POST' action='/new' enctype='multipart/form-data'>
                 <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">Title</span>
@@ -14,6 +14,9 @@
                       <span class="input-group-addon" id="basic-addon1">....</span>
                       <input type="textarea" name='description' class="form-control" placeholder="short description" aria-describedby="basic-addon1">
                     </div>
+                </div>
+                <div>
+                     <input type="file" name='image' aria-describedby="basic-addon1">
                 </div>
                 
                 <div class="form-group">
