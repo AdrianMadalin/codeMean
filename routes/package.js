@@ -12,7 +12,7 @@ router.get('/new', middleware.isLoggedIn, function(req, res){
 
 // HANDLE ADDING THE NEW PACKAGE 
 router.post('/new',middleware.addPackage, function(req,res){
-   console.log('added');
+    
 });
 
 // SHOW THE PACKAGE DETAILS

@@ -1,36 +1,62 @@
 <% include ../../partials/header %>
 
-<div class='container'>
-    <h3> <%= showPackage.title %> </h3>
-    <p> <%= showPackage.shortDescription %> </p>
-    <p> <%= showPackage.author.username %> </p>
 
-    <% if(currentUser && showPackage.author.id.equals(currentUser._id)) { %>
-    
-    <div class='row'>
-        <a href='/package/<%= showPackage.id %>/edit'> <button class='btn btn-warning' >Update</button>  </a>
-        <form id='formButton' method='POST' action='/package/<%= showPackage.id%>?_method=DELETE'>
-            <button class='btn btn-danger'>Delete</button>
-        </form>
-    </div>
-
-    <% }; %>
-    
-    <div class='row'>
-        <a href='/package/<%= showPackage.id %>/comment/new' class='btn btn-primary'> Comment </a>
-    </div>
+<div class='col-lg-12'>
     <div class='container'>
-        <% showPackage.comments.forEach(function(comment){    %>
-            <div class='well'>
-                <p> <strong> <%= comment.description %> </strong> </p>
-                <p> <%= comment.code %> </p>
-            </div>
-        <% }); %>
-    </div>
-    
-    <div class='row'>
-        <a href='/' class='btn btn-default btn-sm'> back </a>
+        <h3> <%= showPackage.title %> </h3>
     </div>
 </div>
-    
+<div class='col-lg-12'>
+    <div class='col-lg-3'>
+        <div class='container'>
+            
+        </div>
+    </div>
+    <div class='col-lg-9'>
+        <div class='container'>
+            <p> <%= showPackage.shortDescription %> </p>
+            <p> Author: <strong><%= showPackage.author.username %> </strong> </p>
+        </div>
+    </div>
+</div>
+<div class='col-lg-12'>
+    <div class='col-lg-3'>
+
+            <img src='/img/<%= showPackage.title %>.png' alt='no image' class='img-responsive'/>
+
+    </div>
+    <div class='col-lg-9'>
+        <div class='container'>
+            <% if(currentUser && showPackage.author.id.equals(currentUser._id)) { %>
+                <a href='/package/<%= showPackage.id %>/edit'> <button class='btn btn-warning' >Update</button>  </a>
+                <form id='formButton' method='POST' action='/package/<%= showPackage.id%>?_method=DELETE'>
+                    <button class='btn btn-danger'>Delete</button>
+                </form>
+            <% }; %>
+                <a href='/package/<%= showPackage.id %>/comment/new' class='btn btn-primary'> Comment </a>
+
+        </div>
+    </div>
+</div>
+<div class='col-lg-12'>
+    <div class='col-lg-3'>
+        <div class='container'>
+            
+        </div>
+    </div>
+    <div class='col-lg-9'>
+        <div class='container'>
+            <% showPackage.comments.forEach(function(comment){    %>
+                
+                    <p> <strong> <%= comment.description %> </strong> </p>
+                    <p> <%= comment.code %> </p>
+                
+            <% }); %>
+        </div>
+
+            <a href='/' class='navBtn'> back </a>
+
+    </div>
+</div>
+
 <% include ../../partials/footer %>

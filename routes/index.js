@@ -5,7 +5,7 @@ var express = require("express"),
 var router = express.Router();
 
 router.get('/', function(req, res){
-    Package.find(function(err, foundPackage){
+    Package.find({},function(err, foundPackage){
         if(err){
             console.log('error retriving the package');
             res.redirect('back');

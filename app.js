@@ -52,5 +52,4 @@ app.use(routeComment);
 // start server
 app.listen(port, ip, function(){
     console.log('SERVER STARTED');
-    console.log(new Date().getTime().toString());
 });

@@ -1,9 +1,97 @@
+/*---------------
+    navbar buttons
+----------------*/
+.navBtn:link,
+.navBtn:visited{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-right: 20px;
+    
+}
+
+.navBtn:hover,
+.navBtn:active{
+    border-bottom: 2px solid rgb(46, 204, 113);
+    transition: border 0.5s;
+}
+
+.nav{
+    margin-top: 15px;
+}
+
+.border{
+    border: 1px solid red;
+}
+
+
+/*---------------
+    /index
+----------------*/
+
+.welcomeImage {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.whiteText{
+   color: white;
+   font-weight: 100;
+}
+
+.btn-add-package{
+    display: inline-block;
+    margin-top: 1%;
+    padding: 5px 5px;
+    border: 1px solid rgb(46, 204, 113);
+    border-radius: 100px;
+    color: #fff;
+}
+
+.btn-add-package:hover,
+.btn-add-package:visited
+{
+    background-color: rgb(46, 204, 113);
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.5s, border 0.2s, color 0.2s
+}
+
+
+.package-element{
+    border: 1px solid rgb(46, 204, 113);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.package-element:hover,
+.package-element:link { 
+    color: white;
+    border: 1px solid rgb(46, 204, 113);
+    background-color: rgb(46, 204, 113);
+    transition: background-color 1s, border 0.2s, color 0.2s;
+}
+
+.package-element a{
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
 
 .loginContainer {
     margin: 0 auto;
     width: 350px;
 }
 
+h1{
+    margin: 0px;
+}
+.page-header {
+    text-align: center;
+}
 .myWell {
   padding: 20px;
   margin: 5px;
@@ -23,12 +111,13 @@
 
 .add-package-btn{
      position: relative;
-  top: 0;
-  right: -45%;
+     top: 0;
+     right: 0%;
 }
 
-.package-container{
-    border: 1px solid #e3e3e3;
-    border-radius: 4px;
+.btn-position{
     text-align: center;
+    position: absolute;
+    float: left;
+    
 }
